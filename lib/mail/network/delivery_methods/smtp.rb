@@ -97,7 +97,7 @@ module Mail
     end
 
     def deliver!(mail)
-      raise Net::SMTPFatalError, '421 4.3.2 <servername[{mail-server-ip}]>: Client host rejected: Try again later' if to == 'mandrill-outage-test@local'
+      raise Net::SMTPFatalError, '421 4.3.2 <servername[{mail-server-ip}]>: Client host rejected: Try again later' if to == 'mandrilloutagetest@local.com'
 
       response = start_smtp_session do |smtp|
         Mail::SMTPConnection.new(:connection => smtp, :return_response => true).deliver!(mail)
